@@ -1,0 +1,6 @@
+%h1= @post.content
+
+=link_to '編集', edit_user_post_path(@user, @post)
+\|
+=link_to '削除', user_post_path(@user, @post), method: :delete, data: {confirm: "削除しますか？"}
+=link_to '戻る', posts_path

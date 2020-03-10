@@ -1,0 +1,15 @@
+%ul.list-group
+- posts.includes(:user).each do |post|
+  %li.list-group-item
+    .row
+      .col.user_name= link_to post.user.name, user_path(post.user)
+      %small.col-3.published.text-muted= l(post.created_at, format: :short)
+    .row.m-1
+      .col.content
+        = simple_format(h(post.content))
+    .row
+      .col.actions.text-right
+        - if post.writer?(current_user)
+          =link_to '編集', edit_user_post_path(post.user, post)
+          \|
+          =link_to '削除', user_post_path(post.user, post), method: :delete, data: {confirm: "削除しますか？"}

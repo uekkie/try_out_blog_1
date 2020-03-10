@@ -1,0 +1,38 @@
+ja:
+  time:
+    formats:
+      short: "%Y/%m/%d %H:%M"
+      short_slash: "%Y/%m/%d"
+  helpers:
+    submit:
+      create: '投稿する'
+      update: '更新する'
+      submit: '保存する'
+  activerecord:
+    models:
+      user: ユーザー
+      post: 投稿
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        profile: プロフィール
+        blog_url: ブログURL
+      post:
+        content: 内容
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              too_long: は20文字以内で入力してください
+              invalid: は半角アルファベットのみ（スペース禁止）
+            email:
+              taken: はすでに使用されています
+              invalid: は正しい形式で入力してください
+            profile:
+              too_long: は200文字以内で入力してください
+        post:
+          attributes:
+            content:
+              too_long: は140文字以内で入力してください

@@ -1,0 +1,9 @@
+= simple_form_for([@user, @post]) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .row
+    .form-inputs.col
+      = f.input :content, as: :text, input_html: {row: 4}
+  .form-actions
+    = f.button :submit, class: "btn btn-primary"

@@ -1,0 +1,12 @@
+%h1= @user.name
+
+%h3 プロフィール
+.profile.container.border.rounded.p-3.mb-3
+  = simple_format(h(@user.profile))
+
+%h3 ブログURL
+.blog_url.container.border.rounded.p-3
+  = @user.blog_url
+
+= link_to "編集", edit_user_path(@user)
+
